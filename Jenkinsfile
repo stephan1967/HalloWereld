@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Joep') {
       steps {
-        mail(subject: 'hallo allemaal', body: 'njnvkvndjvndfjkvnkjdfnvkdfn', from: 'stephan_scherders@hotmail.com', to: 'stephan_scherders@hotmail.com')
+        mail(subject: 'Hallo Maaskantjer', body: 'De groeten van Jenkins', from: 'stephan_scherders@hotmail.com', to: 'stephan_scherders@hotmail.com')
       }
     }
     stage('Anton') {
