@@ -1,25 +1,21 @@
 pipeline {
     agent any
     stages {
-
         stage('Test') {
-            steps {
-               bat 'set'
-            }
+		steps {
+               		bat 'set'
+            	      }
         }
 	stage('Joep') {
-      		steps {
-        mail(subject: 'Hallo Maaskantjer', body: 'De groeten van Jenkins', from: 'stephan_scherders@hotmail.com', to: 'stephan_scherders@hotmail.com')
-      		}
+		steps {
+        		mail(subject: 'Hallo Maaskantjer', body: 'De groeten van Jenkins', from: 'stephan_scherders@hotmail.com', to: 'stephan_scherders@hotmail.com')
+      		      }
         }
-stage('Anton') {
-      steps {
-        input(message: 'Wilt u de test starten ?', id: '100', ok: 'yes', submitter: 'no')
-      }
-    }
-
-
-
+	stage('Anton') {
+      		steps {
+        		input(message: 'Wilt u de test starten ?', id: '100', ok: 'yes', submitter: 'no')
+      		      }
+    	}
     }
     post {
         always {
