@@ -1,19 +1,19 @@
 pipeline {
     agent any
     stages {
-        stage('Test') {
+        stage('Show settings') {
 		steps {
                		bat 'set'
             	      }
         }
-	stage('Joep') {
+	stage('Send mail') {
 		steps {
-        		mail(subject: 'Hallo Maaskantjer', body: 'De groeten van Jenkins', from: 'stephan_scherders@hotmail.com', to: 'stephan_scherders@hotmail.com')
+        		mail(subject: 'Hallo Maaskantje', body: 'De groeten van Jenkins', from: 'stephan_scherders@hotmail.com', to: 'stephan_scherders@hotmail.com')
       		      }
         }
-	stage('Anton') {
+	stage('Show dialog') {
       		steps {
-        		input(message: 'Wilt u de test starten ?', id: '100', ok: 'yes', submitter: 'no')
+        		input(message: 'Wilt u de test starten ?', id: '100', ok: 'Yes', submitter: 'no')
       		      }
     	}
     }
@@ -31,8 +31,7 @@ pipeline {
             echo 'This will run only if the run was marked as unstable'
         }
         changed {
-            echo 'This will run only if the state of the Pipeline has changed'
-            echo 'For example, if the Pipeline was previously failing but is now successful'
+            echo 'This will run only if the state of the Pipeline has changed. eg if the Pipeline was previously failing but is now successful'
         }
     }
 }
