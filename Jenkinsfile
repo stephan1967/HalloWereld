@@ -13,7 +13,7 @@ pipeline {
         }
 	stage('Show dialog') {
       		steps {
-        		input(message: 'Wilt u de test starten ?', id: '100', ok: 'Yes', submitter: 'no')
+        		input(message: 'Wilt u de test starten ?', id: '100', ok: 'Ja', submitter: 'Nee')
       		      }
     	}
     }
